@@ -36,3 +36,88 @@
     transform: rotate(360deg);
   }
 }
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+  flex-grow: 1; /* Use "flex: 1" to fill available space */
+  overflow-y: scroll; /* Enable scrolling */
+  height: 100vh;
+  overflow: hidden;
+
+}
+.message-list .message.sender {
+  align-self: flex-end; /* Align sender messages to the right */
+  background-color: #f0f0f0; /* Lighter background for sender */
+}
+.message-list .message.receiver {
+  align-self: flex-start; /* Align receiver messages to the left */
+  background-color: #e0e0e0; /* Slightly darker background for receiver */
+}
+
+.message-list {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  height: 100%;
+  background-color: #33333344;
+  border-radius: 10px 10px 0px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  background-color: #eee;
+  color: #333;
+}
+.message:after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  border-style: solid;
+  border-width: 10px 10px 0 0;
+  border-color: transparent transparent transparent #f0f0f0; /* Match sender background */
+}
+.message.receiver:after {
+  border-color: transparent transparent transparent #e0e0e0; /* Match receiver background */
+  left: -10px; /* Adjust for positioning */
+}
+.input-container {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.message-input {
+  flex-grow: 1;
+  padding: 10px;
+  border-bottom: 1px solid #757474a1;
+  border-left: 1px solid #757474a1;
+  /* border-radius: 5px; */
+   background-color: transparent;
+   border-radius:  0px 0px 0px 10px;
+   color: #6b6767;
+   
+}
+.input-container input:focus{
+  border: none !important;
+  box-shadow: none
+  ;
+}
+.send-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
